@@ -3,7 +3,7 @@ from pymol import cmd, stored
 # A function to identify surface area of a protein based on the difference between selections
 # and objects
 
-def identifySA(pdb,chain,start,end):
+def identifySA(pdb, chain, start, end):
     # Create lists to store the selected, object, difference of area and list of residue position
     selArea = []
     objArea = []
