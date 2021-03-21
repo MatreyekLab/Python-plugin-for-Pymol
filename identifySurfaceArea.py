@@ -13,7 +13,7 @@ def identifySA(pdb, chain, start, end):
     end = int(end)
 
     # Fetch the protein
-    cmd.fetch("6lr7")
+    cmd.fetch("pdb")
 
     # Create selection and object
     cmd.select("sel_nanobody", pdb + " and " + chain)
