@@ -68,11 +68,11 @@ def findBestSub(aa):
     ## and abundance score to determine the best substitution
     finalList.insert(4, "finalScore", list(range(0, len(finalList))), True)
     for ind in finalList.index:
-        finalList["finalScore"][ind] = finalList["chargeDiff"][ind] + finalList["RankScore"][ind]
-    finalList.sort_values(by=['Score'], inplace=True)
+        finalList["finalScore"][ind] = finalList["chargeDiff"][ind]*50/2 + finalList["RankScore"][ind]*50/len(finalList)
+    finalList.sort_values(by=['finalScore'], inplace=True)
     finalList = finalList.reset_index(drop=True)
     ## Here we choose the best 3 substitution, but it can be changed
-    numSub = 3
+    numSub = 5
     chosenSubList = []
     ## We choose the best subsitution by taking from the last index of the dataframe list
     ## and print it out
